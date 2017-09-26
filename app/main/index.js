@@ -1,4 +1,4 @@
-/* eslint global-require: 1, flowtype-errors/show-errors: 0 */
+/* eslint global-require: 0 */
 
 /**
  * This module executes inside of electron's main process. You can start
@@ -13,7 +13,6 @@
 import * as path from 'path';
 
 import { app, BrowserWindow } from 'electron';
-import * as chokidar from 'chokidar';
 
 let mainWindow = null;
 
@@ -32,8 +31,9 @@ if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true')
     require('module').globalPaths.push(nodeModules);
 }
 
-const installExtensions = async () => {
-    const installer = require('electron-devtools-installer')
+
+const installExtensions = async () => { // eslint-disable-line no-unused-vars
+    const installer = require('electron-devtools-installer');
     const forceDownload = Boolean(process.env.UPGRADE_EXTENSIONS);
     const extensions = [
         'REACT_DEVELOPER_TOOLS',
@@ -65,7 +65,7 @@ app.on('ready', async () => {
         //        An issue talking about it https://github.com/MarshallOfSound/electron-devtools-installer/issues/55
         // await installExtensions();
     }
-    
+
     mainWindow = new BrowserWindow({
         show: false,
         width: 1024,
@@ -76,7 +76,7 @@ app.on('ready', async () => {
     } else {
         mainWindow.loadURL(`file://${path.join(__dirname, 'index.html')}`);
     }
-    
+
     mainWindow.webContents.on('did-finish-load', () => {
         if (!mainWindow) {
             throw new Error('"mainWindow" is not defined');

@@ -2,8 +2,6 @@
  * Webpack config for development electron main process
  */
 
-import * as path from 'path';
-
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
 
@@ -19,7 +17,7 @@ export default merge.smart(baseConfig, {
     output: {
         filename: 'main.js'
     },
-    
+
     plugins: [
         new webpack.EnvironmentPlugin({
             NODE_ENV: 'development'

@@ -4,18 +4,13 @@
  */
 
 import * as path from 'path';
-import { spawn, execSync } from 'child_process';
 
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
-import AutoDllPlugin from 'autodll-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
 import baseConfig from './webpack.config.base';
-import { dependencies } from '../package.json';
-
-const port = process.env.PORT || 1212;
 
 const home = process.cwd();
 
@@ -54,8 +49,8 @@ export default merge.smart(baseConfig, {
                     {
                         loader: 'css-loader',
                         options: {
-                            minimize: true,
-                        },
+                            minimize: true
+                        }
                     }
                 ]
             },
@@ -66,9 +61,9 @@ export default merge.smart(baseConfig, {
                     loader: 'url-loader',
                     options: {
                         limit: 10000,
-                        mimetype: 'application/font-woff',
+                        mimetype: 'application/font-woff'
                     }
-                },
+                }
             },
             // WOFF2 Font
             {
@@ -77,7 +72,7 @@ export default merge.smart(baseConfig, {
                     loader: 'url-loader',
                     options: {
                         limit: 10000,
-                        mimetype: 'application/font-woff',
+                        mimetype: 'application/font-woff'
                     }
                 }
             },
@@ -95,7 +90,7 @@ export default merge.smart(baseConfig, {
             // EOT Font
             {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                use: 'file-loader',
+                use: 'file-loader'
             },
             // SVG Font
             {
@@ -104,14 +99,14 @@ export default merge.smart(baseConfig, {
                     loader: 'url-loader',
                     options: {
                         limit: 10000,
-                        mimetype: 'image/svg+xml',
+                        mimetype: 'image/svg+xml'
                     }
                 }
             },
             // Common Image Formats
             {
                 test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/,
-                use: 'url-loader',
+                use: 'url-loader'
             }
         ]
     },
@@ -128,7 +123,7 @@ export default merge.smart(baseConfig, {
 
         new HtmlWebpackPlugin({
             inject: true,
-            template: path.join(home, 'app/app.html'),
+            template: path.join(home, 'app/app.html')
         })
     ]
 });

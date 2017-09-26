@@ -2,8 +2,6 @@
  * Webpack config for production electron main process
  */
 
-import * as path from 'path';
-
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
@@ -42,6 +40,6 @@ export default merge.smart(baseConfig, {
         new webpack.EnvironmentPlugin({
             NODE_ENV: 'production',
             DEBUG_PROD: 'false'
-        }),
+        })
     ]
 });
