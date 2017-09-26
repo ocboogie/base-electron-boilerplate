@@ -11,7 +11,7 @@ import { spawn } from 'child_process';
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
 import AutoDllPlugin from 'autodll-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import { dependencies } from '../../package.json';
 
@@ -122,16 +122,20 @@ export default merge.smart(baseConfig, {
             multiStep: true
         }),
 
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: path.join(home, 'app/app.html')
-        }),
+        // Using CopyWebpackPlugin instead due to this issue https://github.com/jantimon/html-webpack-plugin/issues/672
+        // new HtmlWebpackPlugin({
+        //     inject: true,
+        //     template: path.join(home, 'app/app.html')
+        // }),
+
+        new CopyWebpackPlugin([
+            { from: path.join(home, 'app/app.html'), to: 'index.html' }
+        ]),
 
         new AutoDllPlugin({
             debug: true,
             inject: true,
-            filename: '[name]-[hash].js',
-            path: './dll',
+            filename: '[name].js',
             entry: {
                 vendor: Object.keys(dependencies)
             }

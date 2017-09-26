@@ -7,7 +7,7 @@ import * as path from 'path';
 
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
 import baseConfig from './webpack.config.base';
@@ -121,9 +121,14 @@ export default merge.smart(baseConfig, {
             sourceMap: true
         }),
 
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: path.join(home, 'app/app.html')
-        })
+        // Using CopyWebpackPlugin instead due to this issue https://github.com/jantimon/html-webpack-plugin/issues/672
+        // new HtmlWebpackPlugin({
+        //     inject: true,
+        //     template: path.join(home, 'app/app.html')
+        // }),
+
+        new CopyWebpackPlugin([
+            { from: path.join(home, 'app/app.html'), to: 'index.html' }
+        ])
     ]
 });
