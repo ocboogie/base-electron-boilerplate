@@ -40,8 +40,9 @@ export default merge.smart(baseConfig, {
                     }
                 }
             },
+            // For importing css into the html
             {
-                test: /\.css$/,
+                test: /\.global\.css$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -50,6 +51,24 @@ export default merge.smart(baseConfig, {
                         loader: 'css-loader',
                         options: {
                             minimize: true
+                        }
+                    }
+                ]
+            },
+            // For importing css into object. Used four components
+            {
+                test: /^((?!\.global).)*\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            minimize: true,
+                            importLoaders: 1,
+                            localIdentName: '[name]__[local]__[hash:base64:5]'
                         }
                     }
                 ]
