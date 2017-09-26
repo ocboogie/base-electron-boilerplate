@@ -28,6 +28,7 @@ if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true')
     } else {
         nodeModules = path.join(__dirname, 'node_modules');
     }
+    // $FlowFixMe
     require('module').globalPaths.push(nodeModules);
 }
 

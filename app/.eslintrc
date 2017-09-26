@@ -1,0 +1,10 @@
+{
+    "extends": "plugin:flowtype/recommended",
+    "rules": {
+        "flowtype-errors/show-errors": "error"
+    },
+    "plugins": [
+        "flowtype",
+        "flowtype-errors"
+    ]
+}

@@ -1,10 +1,12 @@
 {
+    "javascript.validate.enable": false,
+    "flow.useNPMPackagedFlow": true,
     "search.exclude": {
         ".git": true,
         "dist": true,
         "node_modules": true,
         "npm-debug.log.*": true,
         "yarn.lock": true,
-        "package-lock.json": true
+        "flow-typed": true
     }
 }

@@ -11,5 +11,18 @@
         ],
         "stage-0",
         "react"
-    ]
+    ],
+    "env": {
+        "development": {
+            "plugins": [
+                [
+                    "flow-runtime",
+                    {
+                        "assert": true,
+                        "annotate": true
+                    }
+                ]
+            ]
+        }
+    }
 }
