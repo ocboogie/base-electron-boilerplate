@@ -2,11 +2,15 @@
  * Webpack config for production electron main process
  */
 
+import * as path from 'path';
+
 import * as webpack from 'webpack';
 import * as merge from 'webpack-merge';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
 import baseConfig from './webpack.config.base';
+
+const home = process.cwd();
 
 /**
  * Disclaimer! Not yet tested
@@ -16,7 +20,7 @@ export default merge.smart(baseConfig, {
 
     target: 'electron-main',
 
-    entry: './app/main/index',
+    entry: path.join(home, 'app/main/index'),
 
     output: {
         filename: 'main.js'

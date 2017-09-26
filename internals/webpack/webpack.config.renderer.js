@@ -13,7 +13,7 @@ import * as merge from 'webpack-merge';
 import AutoDllPlugin from 'autodll-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import { dependencies } from '../package.json';
+import { dependencies } from '../../package.json';
 
 import baseConfig from './webpack.config.base';
 
