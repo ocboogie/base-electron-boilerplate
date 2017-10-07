@@ -7,16 +7,18 @@ import webpack from 'webpack';
 
 export default {
     module: {
-        rules: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    cacheDirectory: true
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        cacheDirectory: true
+                    }
                 }
             }
-        }]
+        ]
     },
 
     output: {

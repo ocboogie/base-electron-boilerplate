@@ -1,71 +1,53 @@
 {
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "sourceType": "module",
-        "allowImportExportEverywhere": true
-    },
-    "extends": [
-        "airbnb",
-        "plugin:flowtype/recommended"
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "extends": ["airbnb", "plugin:flowtype/recommended"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
     ],
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "rules": {
-        "indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1
-            }
-        ],
-        "consistent-return": "error",
-        "comma-dangle": [
-            "error",
-            "never"
-        ],
-        "generator-star-spacing": "off",
-        "import/no-unresolved": "error",
-        "import/no-extraneous-dependencies": "off",
-        "import/order": [
-            "error",
-            {
-                "newlines-between": "always"
-            }
-        ],
-        "no-console": "off",
-        "promise/param-names": "error",
-        "promise/always-return": "error",
-        "promise/catch-or-return": "error",
-        "promise/no-native": "off",
-        "react/jsx-filename-extension": [
-            "error",
-            {
-                "extensions": [
-                    ".js",
-                    ".jsx"
-                ]
-            }
-        ],
-        "react/prefer-stateless-function": "off",
-        "react/jsx-indent": [
-            "error",
-            4
-        ]
-    },
-    "plugins": [
-        "flowtype",
-        "flowtype-errors",
-        "import",
-        "promise",
-        "react"
+    "consistent-return": "error",
+    "comma-dangle": ["error", "never"],
+    "generator-star-spacing": "off",
+    "import/no-unresolved": "error",
+    "import/no-extraneous-dependencies": "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always"
+      }
     ],
-    "settings": {
-        "import/resolver": {
-            "webpack": {
-                "config": "./internals/webpack/webpack.config.eslint.js"
-            }
-        }
+    "no-console": "off",
+    "promise/param-names": "error",
+    "promise/always-return": "error",
+    "promise/catch-or-return": "error",
+    "promise/no-native": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/prefer-stateless-function": "off",
+    "react/jsx-indent": ["error", 4]
+  },
+  "plugins": ["flowtype", "flowtype-errors", "import", "promise", "react"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./internals/webpack/webpack.config.eslint.js"
+      }
     }
+  }
 }
