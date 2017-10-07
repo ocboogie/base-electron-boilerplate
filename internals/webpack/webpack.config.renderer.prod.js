@@ -1,5 +1,5 @@
 /**
- * Build config for production electron renderer 
+ * Build config for production electron renderer
  * Not yet tested
  */
 
@@ -146,8 +146,6 @@ export default merge.smart(baseConfig, {
         //     template: path.join(home, 'app/app.html')
         // }),
 
-        new CopyWebpackPlugin([
-            { from: path.join(home, 'app/app.html'), to: 'index.html' }
-        ])
+        new CopyWebpackPlugin([{ from: path.join(home, 'app/app.html'), to: 'index.html' }])
     ]
 });

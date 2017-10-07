@@ -147,9 +147,7 @@ export default merge.smart(baseConfig, {
         //     template: path.join(home, 'app/app.html')
         // }),
 
-        new CopyWebpackPlugin([
-            { from: path.join(home, 'app/app.html'), to: 'index.html' }
-        ]),
+        new CopyWebpackPlugin([{ from: path.join(home, 'app/app.html'), to: 'index.html' }]),
 
         new AutoDllPlugin({
             debug: true,
@@ -195,11 +193,11 @@ export default merge.smart(baseConfig, {
         setup() {
             if (process.env.START_HOT === 'true') {
                 console.log('Staring Main Process...');
-                spawn(
-                    'npm',
-                    ['run', 'start-main-dev'],
-                    { shell: true, env: process.env, stdio: 'inherit' }
-                )
+                spawn('npm', ['run', 'start-main-dev'], {
+                    shell: true,
+                    env: process.env,
+                    stdio: 'inherit'
+                })
                     .on('close', code => process.exit(code))
                     .on('error', spawnError => console.error(spawnError));
             }
