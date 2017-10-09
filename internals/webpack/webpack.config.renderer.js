@@ -137,10 +137,6 @@ export default merge.smart(baseConfig, {
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin({
-            multiStep: true
-        }),
-
         // Using CopyWebpackPlugin instead due to this issue https://github.com/jantimon/html-webpack-plugin/issues/672
         // new HtmlWebpackPlugin({
         //     inject: true,
@@ -180,7 +176,6 @@ export default merge.smart(baseConfig, {
         compress: true,
         stats: 'errors-only',
         noInfo: true,
-        hot: true,
         watchOptions: {
             aggregateTimeout: 300,
             ignored: /node_modules/,
