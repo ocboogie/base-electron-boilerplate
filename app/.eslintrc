@@ -1,5 +1,6 @@
 {
-    "rules": {
-        "flowtype-errors/show-errors": "error"
-    }
+  "rules": {
+    "flowtype-errors/show-errors": "error",
+    "flowtype/no-types-missing-file-annotation": "off"
+  }
 }
