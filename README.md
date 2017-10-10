@@ -12,3 +12,11 @@ This repo is very similar to [electron-react-boilerplate](https://github.com/che
  * Added some flow types, like a State type
  * Updated the React component prop types
  
+# Contributing
+I'm looking to grow this repo, and maybe even merge with electron-react-boilerplate.
+
+ 1. Fork this repo
+ 2. Clone the forked repo to your machine
+ 3. Create a feature branch
+ 4. Add the feature you want or whatever
+ 5. Make a pull request on this repo
