@@ -1,7 +1,7 @@
 {
   "name": "base-electron-boilerplate",
   "version": "0.0.1",
-  "description": "This is a Electron boilerplate using Electron, React, Redux, React Router, Babel, Webpack and Flow",
+  "description": "This is my rendition of electron-react-boilerplate",
   "main": "dist/main.js",
   "repository": "git@github.com:ocboogie/base-electron-boilerplate.git",
   "author": "ocboogie <boogie@mikulec.com>",
