@@ -81,6 +81,11 @@ app.on('ready', async () => {
         mainWindow.focus();
     });
 
+    // Open dev tools when debugging
+    if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
+        mainWindow.webContents.openDevTools();
+    }
+
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
