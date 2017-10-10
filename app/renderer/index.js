@@ -1,7 +1,13 @@
-// @flow
 import React from 'react';
 import { render } from 'react-dom';
 
+import Root from './containers/Root';
+import storeObj from './store';
+
 import '../styles.global.css';
 
-render(<div>Test</div>, document.getElementById('root'));
+const { configureStore, history } = storeObj;
+
+const store = configureStore();
+
+render(<Root store={store} history={history} />, document.getElementById('root'));
