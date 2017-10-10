@@ -1,0 +1,12 @@
+{
+  "name": "base-electron-boilerplate",
+  "productName": "base-electron-boilerplate",
+  "version": "0.0.1",
+  "description": "This is my rendition of electron-react-boilerplate",
+  "main": "./main.js",
+  "author": "ocboogie <boogie@mikulec.com>",
+  "scripts": {
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

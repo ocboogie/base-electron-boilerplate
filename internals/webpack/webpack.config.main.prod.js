@@ -12,9 +12,6 @@ import baseConfig from './webpack.config.base';
 
 const home = process.cwd();
 
-/**
- * Disclaimer! Not yet tested
- */
 export default merge.smart(baseConfig, {
     devtool: 'source-map',
 

@@ -18,6 +18,7 @@
     "node_modules": true,
     "npm-debug.log.*": true,
     "yarn.lock": true,
-    "flow-typed": true
+    "flow-typed": true,
+    "release": true
   }
 }

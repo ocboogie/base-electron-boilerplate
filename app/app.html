@@ -7,8 +7,19 @@
 
 <body>
     <div id="root"></div>
-    <script type="text/javascript" src="vendor.js"></script>
-    <script type="text/javascript" src="renderer.js"></script>
+    <script>
+        const scripts = [];
+        if (process.env.NODE_ENV === 'development') {
+            scripts.push('./vendor.js');
+        }
+        scripts.push('renderer.js');
+
+        document.write(
+            scripts
+                .map(script => '<script defer src="' + script + '"><\/script>')
+                .join('')
+        );
+    </script>
 </body>
 
 </html>

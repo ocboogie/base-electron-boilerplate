@@ -143,7 +143,11 @@ export default merge.smart(baseConfig, {
         //     template: path.join(home, 'app/app.html')
         // }),
 
-        new CopyWebpackPlugin([{ from: path.join(home, 'app/app.html'), to: 'index.html' }]),
+        new CopyWebpackPlugin([
+            { from: path.join(home, 'app/app.html'), to: 'index.html' },
+            { from: path.join(home, 'app/package.json') },
+            { from: path.join(home, 'app/node_modules'), to: 'node_modules' }
+        ]),
 
         new AutoDllPlugin({
             debug: true,

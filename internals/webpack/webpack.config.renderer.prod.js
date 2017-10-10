@@ -1,6 +1,5 @@
 /**
  * Build config for production electron renderer
- * Not yet tested
  */
 
 import * as path from 'path';
@@ -14,9 +13,6 @@ import baseConfig from './webpack.config.base';
 
 const home = process.cwd();
 
-/**
- * Disclaimer! Not yet tested
- */
 export default merge.smart(baseConfig, {
     devtool: 'inline-source-map',
 
@@ -146,6 +142,14 @@ export default merge.smart(baseConfig, {
         //     template: path.join(home, 'app/app.html')
         // }),
 
-        new CopyWebpackPlugin([{ from: path.join(home, 'app/app.html'), to: 'index.html' }])
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'production'
+        }),
+
+        new CopyWebpackPlugin([
+            { from: path.join(home, 'app/app.html'), to: 'index.html' },
+            { from: path.join(home, 'app/package.json') },
+            { from: path.join(home, 'app/node_modules'), to: 'node_modules' }
+        ])
     ]
 });
