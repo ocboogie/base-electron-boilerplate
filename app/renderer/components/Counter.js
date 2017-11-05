@@ -44,7 +44,7 @@ class Counter extends React.Component<Props> {
             onClick={incrementIfOdd}
             data-tclass="btn"
           >
-            > > odd
+            odd
           </button>
           <button
             className={styles.btn}
