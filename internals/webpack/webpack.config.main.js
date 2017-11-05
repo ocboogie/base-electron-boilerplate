@@ -12,19 +12,19 @@ import baseConfig from './webpack.config.base';
 const home = process.cwd();
 
 export default merge.smart(baseConfig, {
-    devtool: 'source-map',
+  devtool: 'source-map',
 
-    target: 'electron-main',
+  target: 'electron-main',
 
-    entry: path.join(home, 'app/main/index'),
+  entry: path.join(home, 'app/main/index'),
 
-    output: {
-        filename: 'main.js'
-    },
+  output: {
+    filename: 'main.js'
+  },
 
-    plugins: [
-        new webpack.EnvironmentPlugin({
-            NODE_ENV: 'development'
-        })
-    ]
+  plugins: [
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development'
+    })
+  ]
 });

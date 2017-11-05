@@ -13,23 +13,23 @@ import baseConfig from './webpack.config.base';
 const home = process.cwd();
 
 export default merge.smart(baseConfig, {
-    devtool: 'source-map',
+  devtool: 'source-map',
 
-    target: 'electron-main',
+  target: 'electron-main',
 
-    entry: path.join(home, 'app/main/index'),
+  entry: path.join(home, 'app/main/index'),
 
-    output: {
-        filename: 'main.js'
-    },
+  output: {
+    filename: 'main.js'
+  },
 
-    plugins: [
-        new UglifyJSPlugin({
-            parallel: true,
-            sourceMap: true
-        }),
+  plugins: [
+    new UglifyJSPlugin({
+      parallel: true,
+      sourceMap: true
+    }),
 
-        /**
+    /**
          * Create global constants which can be configured at compile time.
          *
          * Useful for allowing different behaviour between development builds and
@@ -38,9 +38,9 @@ export default merge.smart(baseConfig, {
          * NODE_ENV should be production so that modules do not perform certain
          * development checks
          */
-        new webpack.EnvironmentPlugin({
-            NODE_ENV: 'production',
-            DEBUG_PROD: 'false'
-        })
-    ]
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'production',
+      DEBUG_PROD: 'false'
+    })
+  ]
 });

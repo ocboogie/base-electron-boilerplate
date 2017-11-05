@@ -7,14 +7,14 @@ import HomePage from './containers/HomePage';
 import CounterPage from './containers/CounterPage';
 
 export default class Routes extends React.Component<{}> {
-    render() {
-        return (
-            <App>
-                <Switch>
-                    <Route path="/counter" component={CounterPage} />
-                    <Route path="/" component={HomePage} />
-                </Switch>
-            </App>
-        );
-    }
+  render() {
+    return (
+      <App>
+        <Switch>
+          <Route path="/counter" component={CounterPage} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </App>
+    );
+  }
 }

@@ -4,19 +4,13 @@
     "sourceType": "module",
     "allowImportExportEverywhere": true
   },
-  "extends": ["airbnb", "plugin:flowtype/recommended"],
+  "extends": ["airbnb", "plugin:flowtype/recommended", "prettier"],
   "env": {
     "browser": true,
     "node": true
   },
   "rules": {
-    "indent": [
-      "error",
-      4,
-      {
-        "SwitchCase": 1
-      }
-    ],
+    "prettier/prettier": "error",
     "consistent-return": "error",
     "comma-dangle": ["error", "never"],
     "generator-star-spacing": "off",
@@ -39,11 +33,16 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "react/prefer-stateless-function": "off",
-    "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4]
+    "react/prefer-stateless-function": "off"
   },
-  "plugins": ["flowtype", "flowtype-errors", "import", "promise", "react"],
+  "plugins": [
+    "flowtype",
+    "flowtype-errors",
+    "import",
+    "promise",
+    "react",
+    "prettier"
+  ],
   "settings": {
     "import/resolver": {
       "webpack": {

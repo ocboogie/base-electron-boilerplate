@@ -10,4 +10,7 @@ const { configureStore, history } = storeObj;
 
 const store = configureStore();
 
-render(<Root store={store} history={history} />, document.getElementById('root'));
+render(
+  <Root store={store} history={history} />,
+  document.getElementById('root')
+);
